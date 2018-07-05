@@ -1,6 +1,6 @@
 from twitter import *
 import sys
-import config
+import credentials
 
 
 class TwitterSearch:
@@ -8,7 +8,7 @@ class TwitterSearch:
     @staticmethod
     def search(terms):
         sys.path.append('.')
-        twitter = Twitter(auth=OAuth(config.ACCESS_KEY, config.SECRET_KEY, config.CONSUMER_KEY, config.CONSUMER_SECRET))
+        twitter = Twitter(auth=OAuth(credentials.ACCESS_KEY, credentials.SECRET_KEY, credentials.CONSUMER_KEY, credentials.CONSUMER_SECRET))
         results = twitter.users.search(q=terms)
 
         for user in results:
