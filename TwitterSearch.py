@@ -12,4 +12,4 @@ class TwitterSearch:
         results = twitter.users.search(q=terms)
 
         for user in results:
-            print("@%s (%s): %s" % (user["screen_name"], user["name"]))
+            print("@%s (%s): %s" % [user['screen_name'], user["name"]])
